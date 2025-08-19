@@ -1,0 +1,60 @@
+<main class="pt-8 pb-16 lg:pt-16 lg:pb-24 bg-white dark:bg-gray-900 antialiased">
+  <div class="flex justify-between px-4 mx-auto max-w-screen-xl">
+      <article class="mx-auto w-full max-w-4xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+          <div class="flex flex-col md:flex-row gap-8">
+              <!-- Left column for images (swiper) - fixed width but height matches content -->
+              <div class="w-full md:w-1/2 md:min-h-[calc(100vh-8rem)] flex items-stretch">
+                  <div class="swiper w-full sticky top-8 h-auto">
+                      <div class="swiper-wrapper h-full">
+                          {{ thumbnail }}  
+                              <div class="swiper-slide h-full">
+                                  <img src="{{ url }}" alt="{{ alt }}" class="w-full h-full object-cover rounded-lg">
+                              </div>
+                          {{ /thumbnail }}
+                      </div>
+                      <div class="swiper-pagination"></div>
+                      <div class="swiper-button-prev"></div>
+                      <div class="swiper-button-next"></div>
+                  </div>
+              </div>
+              
+              <!-- Right column for content - will determine the height -->
+              <div class="w-full md:w-1/2">
+                  <header class="mb-4 lg:mb-6 not-format">
+                      <address class="flex items-center mb-6 not-italic">
+                          <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                              <div>
+                                  <span class="text-xl font-bold text-gray-900 dark:text-white">{{author:name}}</span>
+                                  <p class="text-base text-gray-500 dark:text-gray-400">
+                                      <time pubdate datetime="2022-02-08" title="February 8th, 2022">{{date}}</time>
+                                  </p>
+                              </div>
+                          </div>
+                      </address>
+
+                      <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">{{title}}</h1>
+
+                      <div class="flex flex-wrap gap-2 mb-6">
+                          {{tags}}
+                            <a href="{{url}}" class="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 rounded-full text-sem">{{title}}</a>
+                          {{/tags}}
+                      </div>
+
+                      <section class="prose dark:prose-invert max-w-none">{{bard}}</section>
+                  </header>
+              </div>
+          </div>
+      </article>
+  </div>
+</main>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+new Swiper('.swiper', {
+    loop: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    autoplay: { delay: 3000 },
+});
+</script>

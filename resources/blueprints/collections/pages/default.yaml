@@ -1,0 +1,12 @@
+title: Page (Default)
+fields:
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Content
+  -
+    handle: template
+    field:
+      type: template
+      display: Template

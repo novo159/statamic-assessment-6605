@@ -1,0 +1,60 @@
+title: About Page
+fields:
+  -
+    handle: hero_subtitle
+    field:
+      type: text
+      display: Subtitle
+      instructions: Optional subtitle under the page title
+  -
+    handle: intro
+    field:
+      type: markdown
+      display: Intro Content
+      instructions: Lead paragraph(s) for the About page
+  -
+    handle: features
+    field:
+      type: grid
+      display: Features
+      instructions: Key features or highlights
+      fields:
+        -
+          handle: icon
+          field:
+            type: text
+            display: Icon (emoji or SVG name)
+        -
+          handle: title
+          field:
+            type: text
+            display: Title
+        -
+          handle: body
+          field:
+            type: textarea
+            display: Description
+  -
+    handle: team
+    field:
+      type: grid
+      display: Team
+      instructions: Add team members
+      fields:
+        -
+          handle: name
+          field:
+            type: text
+            display: Name
+        -
+          handle: role
+          field:
+            type: text
+            display: Role
+        -
+          handle: photo
+          field:
+            type: assets
+            display: Photo
+            container: assets
+            max_files: 1

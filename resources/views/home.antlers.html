@@ -1,0 +1,140 @@
+<!-- Hero -->
+<section class="relative overflow-hidden bg-slate-100 dark:bg-gray-900">
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-slate-200/40 to-transparent dark:from-gray-800/60"></div>
+  <div class="container mx-auto px-6 lg:pt-16 pt-8 lg:pb-24 pb-16">
+    <div class="grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <span class="inline-block rounded-full bg-blue-700/10 text-blue-700 px-3 py-1 text-sm">Welcome</span>
+        <h1 class="mt-4 text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-800 dark:text-white">
+          {{ title }}
+        </h1>
+        <p class="mt-4 text-base leading-relaxed text-slate-500 dark:text-gray-400 max-w-4xl">
+          Build a modern Statamic site with a clean Tailwind-powered design. Browse the latest articles, explore features,
+          and get in touch — all from this elegant home page.
+        </p>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="/posts" class="inline-flex items-center rounded-full bg-blue-700 px-7 py-2 text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-600">
+            Read the blog
+          </a>
+          <a href="/contact" class="inline-flex items-center rounded-full border border-gray-200 px-7 py-2 text-slate-800 hover:bg-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700">
+            Contact us
+          </a>
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <div class="relative rounded-2xl overflow-hidden shadow-xl">
+          <div class="aspect-[16/10] bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600"></div>
+          <div class="absolute inset-0 p-6 md:p-7 xl:p-9 flex items-end">
+            <div class="rounded-xl bg-white/80 dark:bg-gray-900/70 backdrop-blur p-4 md:p-7 w-full">
+              <p class="text-sm text-slate-700 dark:text-gray-400">
+                Crafted with Tailwind CSS and Statamic. Fully responsive, dark-mode ready.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="container mx-auto px-6 py-12 lg:py-16">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6 md:p-7">
+        <div class="flex items-center space-x-4">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 text-white">
+            <!-- icon -->
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14h-2v-2h2Zm0-4h-2V6h2Z"/></svg>
+          </span>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Simple</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Clean Antlers templates and sensible defaults.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6 md:p-7">
+        <div class="flex items-center space-x-4">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2 3 7v10l8.99 5L21 17V7Zm0 2.18L18.53 7 12 10.82 5.47 7ZM5 9.3l6 3.36v7.04L5 16.34Zm8 10.4v-7.04l6-3.36v7.04Z"/></svg>
+          </span>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Flexible</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Extend with blueprints, collections, and partials.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6 md:p-7">
+        <div class="flex items-center space-x-4">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-purple-600 text-white">
+            <svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4 2 20h20Zm0 3.46L18.04 18H5.96Z"/></svg>
+          </span>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Fast</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Vite-powered dev server and optimized builds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Posts -->
+<section class="bg-slate-100 dark:bg-gray-900">
+  <div class="container mx-auto px-6 py-12">
+    <div class="flex items-center justify-between">
+      <h2 class="text-2xl font-bold text-slate-800 dark:text-white">Latest posts</h2>
+      <a href="/posts" class="text-blue-700 hover:underline">View all</a>
+    </div>
+    <div class="mt-8 grid gap-8 md:grid-cols-3">
+      {{ collection:posts limit="3" sort="-date" }}
+        {{ if no_results }}
+          <p class="text-slate-500 dark:text-gray-400">No posts yet. Check back soon.</p>
+        {{ /if }}
+        {{ entries }}
+          <article class="rounded-xl bg-white dark:bg-gray-900 shadow-lg overflow-hidden transition hover:shadow-xl">
+            <a href="{{ url }}" class="block">
+              {{ if thumbnail }}
+                {{ thumbnail limit="1" }}
+                  <img src="{{ url }}" alt="{{ alt }}" class="h-60 w-full object-cover" />
+                {{ /thumbnail }}
+              {{ else }}
+                <div class="h-60 w-full bg-gradient-to-br from-indigo-500 to-blue-600"></div>
+              {{ /if }}
+              <div class="p-6">
+                <div class="text-xs text-slate-500">{{ date format="M j, Y" }}</div>
+                <h3 class="mt-2 text-lg font-semibold text-gray-900 dark:text-white">{{ title }}</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-300 line-clamp-3">{{ excerpt ?? content | strip_tags | safe_truncate(120, '...') }}</p>
+              </div>
+            </a>
+          </article>
+        {{ /entries }}
+      {{ /collection:posts }}
+    </div>
+  </div>
+</section>
+
+<!-- Page Content from Entry -->
+<section class="bg-white dark:bg-gray-900">
+  <div class="container mx-auto px-6 py-12">
+    <article class="max-w-4xl mx-auto bg-white dark:bg-gray-900 p-8 shadow-xl rounded-2xl prose prose-slate dark:prose-invert">
+      {{ content | widont }}
+    </article>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="relative overflow-hidden bg-gradient-to-br from-indigo-600 to-blue-600">
+  <div class="container mx-auto px-6 py-12 lg:py-16">
+    <div class="md:flex md:items-center md:justify-between">
+      <div>
+        <h2 class="text-white text-2xl font-bold">Ready to explore more?</h2>
+        <p class="text-white/80 mt-2">Head over to the blog or reach out — we’d love to hear from you.</p>
+      </div>
+      <div class="mt-5 md:mt-0 space-x-4">
+        <a href="/posts" class="inline-block rounded-full bg-white text-indigo-700 px-7 py-2 font-medium hover:bg-slate-100">Go to Blog</a>
+        <a href="/contact" class="inline-block rounded-full border border-white/60 text-white px-7 py-2 font-medium hover:bg-white/10">Contact</a>
+      </div>
+    </div>
+  </div>
+</section>

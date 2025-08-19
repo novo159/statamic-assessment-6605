@@ -1,0 +1,35 @@
+title: Contact Page
+fields:
+  -
+    handle: heading
+    field:
+      type: text
+      display: Heading
+      validate: required
+  -
+    handle: subtitle
+    field:
+      type: text
+      display: Subtitle
+  -
+    handle: address
+    field:
+      type: textarea
+      display: Address
+  -
+    handle: email
+    field:
+      type: text
+      input_type: email
+      display: Email
+  -
+    handle: phone
+    field:
+      type: text
+      display: Phone
+  -
+    handle: form
+    field:
+      type: form
+      display: Form
+      instructions: Select a Statamic Form to render on the page

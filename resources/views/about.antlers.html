@@ -1,0 +1,78 @@
+<!-- About Page -->
+<div class="p-3 bg-yellow-100 text-yellow-800">About page content should render here.</div>
+<section class="relative overflow-hidden bg-slate-100 dark:bg-gray-900">
+  <div class="container mx-auto px-6 lg:pt-16 pt-8 lg:pb-16 pb-10">
+    <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-800 dark:text-white">{{ title }}</h1>
+    {{ if hero_subtitle }}
+      <p class="mt-2 text-slate-500 dark:text-gray-400">{{ hero_subtitle }}</p>
+    {{ elseif subtitle }}
+      <p class="mt-2 text-slate-500 dark:text-gray-400">{{ subtitle }}</p>
+    {{ else }}
+      <p class="mt-2 text-slate-500 dark:text-gray-400">Learn more about {{ site:name }}.</p>
+    {{ /if }}
+  </div>
+</section>
+
+<section class="bg-white dark:bg-gray-900">
+  <div class="container mx-auto px-6 py-12">
+    <article class="prose prose-slate dark:prose-invert max-w-4xl">
+      {{ if intro }}
+        {{ intro | widont }}
+      {{ elseif content }}
+        {{ content | markdown }}
+      {{ else }}
+        <p>Share your story, mission, and values here. You can edit this content from the About entry.</p>
+      {{ /if }}
+    </article>
+
+    {{ if features }}
+    <div class="mt-10 grid gap-8 md:grid-cols-3">
+      {{ features }}
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+        <div class="flex items-start space-x-4">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">{{ icon }}</span>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{ title }}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">{{ body }}</p>
+          </div>
+        </div>
+      </div>
+      {{ /features }}
+    </div>
+    {{ else }}
+    <div class="mt-10 grid gap-8 md:grid-cols-3">
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+        <div class="flex items-start space-x-4">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">🚀</span>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Fast & Modern</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Built with Vite and Tailwind for great performance and DX.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+        <div class="flex items-start space-x-4">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">🧩</span>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Flexible</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Content collections, blueprints, and Antlers templates.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+        <div class="flex items-start space-x-4">
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">🌙</span>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Dark Mode</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Thoughtful styles for light and dark backgrounds.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ /if }}
+
+    <div class="mt-12">
+      <a href="/contact" class="inline-flex items-center rounded-full bg-blue-700 px-7 py-2 text-white transition-colors hover:bg-blue-600">Get in touch</a>
+    </div>
+  </div>
+</section>
