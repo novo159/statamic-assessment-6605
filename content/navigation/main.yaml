@@ -1,8 +1,14 @@
 title: Main Navigation
 tree:
   -
-    entry: home
+    title: Home
+    url: /
   -
-    entry: about
+    title: About
+    url: /about
   -
-    entry: contact
+    title: Blog
+    url: /posts
+  -
+    title: Contact
+    url: /contact
