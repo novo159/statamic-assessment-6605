@@ -6,3 +6,6 @@ tree:
     entry: about
   -
     entry: contact
+  -
+    title: Blog
+    url: /posts
