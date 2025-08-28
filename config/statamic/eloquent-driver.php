@@ -67,12 +67,12 @@ return [
     ],
 
     'navigations' => [
-        'driver' => 'eloquent',
+        'driver' => 'file', // switched to flat-file for repo portability
         'model' => \Statamic\Eloquent\Structures\NavModel::class,
     ],
 
     'navigation_trees' => [
-        'driver' => 'eloquent',
+        'driver' => 'file', // switched to flat-file
         'model' => \Statamic\Eloquent\Structures\TreeModel::class,
         'tree' => \Statamic\Eloquent\Structures\NavTree::class,
     ],
