@@ -1,0 +1,13 @@
+tree:
+  -
+    id: c3df0893-2c71-4d46-8275-427aa6e83816
+    title: Home
+    url: 'http://127.0.0.1:8000/'
+  -
+    id: 5c59c820-0be4-4481-b033-60cec1f82843
+    title: Blog
+    url: 'http://127.0.0.1:8000/posts'
+  -
+    id: a0da74e1-03ad-4d68-806e-fdef93a384f7
+    title: About
+    url: 'http://127.0.0.1:8000/contact'

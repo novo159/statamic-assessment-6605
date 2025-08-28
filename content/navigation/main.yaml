@@ -1,14 +1,3 @@
-title: Main Navigation
-tree:
-  -
-    title: Home
-    url: /
-  -
-    title: About
-    url: /about
-  -
-    title: Blog
-    url: /posts
-  -
-    title: Contact
-    url: /contact
+title: 'Main Navigation'
+collections:
+  - pages
